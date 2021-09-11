@@ -49,7 +49,10 @@ export function App() {
   }, [range]);
 
   useEffect(() => {
-    if (!showLetters && !showNumbers && !showSymbols) {
+    if (
+      (!showLetters && !showNumbers && !showSymbols) ||
+      parseInt(range) <= 1
+    ) {
       setPassword('No password is a bad password 😡');
     } else {
       setPassword(
