@@ -3,7 +3,7 @@ export const floorAndRoundNumber = (): number => Math.floor(Math.random() * 10);
 export function generate(
   callback: (...args: any) => any
 ): Array<number | string> {
-  const generatedArr = Array.from({ length: 26 }, callback);
+  const generatedArr = Array.from({length: 26}, callback);
   // limit length of arr
   return generatedArr.splice(0, 7) as string[];
 }

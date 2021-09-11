@@ -1,13 +1,13 @@
-import { useEffect } from "preact/hooks";
-import useStore from "./state";
-import { generatePassword } from "./passwordGenerator";
+import {useEffect} from 'preact/hooks';
+import useStore from './state';
+import {generatePassword} from './passwordGenerator';
 import {
   backgroundVariant,
   mainBackground,
   buttonBackground,
-} from "./style/background.css";
-import { input } from "./style/input.css";
-import { heading, subheader, label } from "./style/typography.css";
+} from './style/background.css';
+import {input} from './style/input.css';
+import {heading, subheader, label} from './style/typography.css';
 
 export function App() {
   const {
@@ -25,13 +25,13 @@ export function App() {
 
   useEffect(() => {
     if (parseInt(range) <= 6) {
-      setBackground("bad");
+      setBackground('bad');
     }
     if (parseInt(range) > 7) {
-      setBackground("medium");
+      setBackground('medium');
     }
     if (parseInt(range) >= 12) {
-      setBackground("good");
+      setBackground('good');
     }
   }, [range]);
 
@@ -44,9 +44,9 @@ export function App() {
   });
 
   const PASSWORD_STRENGTH = {
-    good: "Strong",
-    medium: "Fairly strong",
-    bad: "Weak",
+    good: 'Strong',
+    medium: 'Fairly strong',
+    bad: 'Weak',
   };
 
   return (

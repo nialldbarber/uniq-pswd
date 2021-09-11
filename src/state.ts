@@ -1,9 +1,9 @@
-import create from "zustand";
+import create from 'zustand';
 
 export const BACKGROUND = {
-  good: "good",
-  medium: "medium",
-  bad: "bad",
+  good: 'good',
+  medium: 'medium',
+  bad: 'bad',
 };
 
 export type Background = keyof typeof BACKGROUND;
@@ -22,16 +22,16 @@ type State = {
 };
 
 const useStore = create<State>((set) => ({
-  range: "12",
-  background: "good",
+  range: '12',
+  background: 'good',
   showLetters: true,
   showNumbers: true,
   showSymbols: false,
-  setRange: (val) => set(() => ({ range: val })),
-  setBackground: (color) => set(() => ({ background: color })),
-  setShowLetters: (letter) => set(() => ({ showLetters: letter })),
-  setShowNumbers: (number) => set(() => ({ showNumbers: number })),
-  setShowSymbols: (symbol) => set(() => ({ showSymbols: symbol })),
+  setRange: (val) => set(() => ({range: val})),
+  setBackground: (color) => set(() => ({background: color})),
+  setShowLetters: (letter) => set(() => ({showLetters: letter})),
+  setShowNumbers: (number) => set(() => ({showNumbers: number})),
+  setShowSymbols: (symbol) => set(() => ({showSymbols: symbol})),
 }));
 
 export default useStore;
