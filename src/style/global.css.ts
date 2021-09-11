@@ -9,7 +9,7 @@ globalStyle("html, body", {
   width: "100%",
   padding: 0,
   margin: 0,
-  fontFamily: "'Helvetica Neue', arial, sans-serif",
+  fontFamily: "'Ubuntu', sans-serif",
   WebkitFontSmoothing: "antialiased",
   MozOsxFontSmoothing: "grayscale",
 });
