@@ -5,7 +5,6 @@ import {
   backgroundVariant,
   mainBackground,
   buttonBackground,
-  labelTag,
 } from "./style/background.css";
 import { input } from "./style/input.css";
 import { heading, subheader, label } from "./style/typography.css";
@@ -25,11 +24,11 @@ export function App() {
   } = useStore();
 
   useEffect(() => {
-    if (parseInt(range) > 10) {
-      setBackground("medium");
-    }
-    if (parseInt(range) <= 7) {
+    if (parseInt(range) <= 6) {
       setBackground("bad");
+    }
+    if (parseInt(range) > 7) {
+      setBackground("medium");
     }
     if (parseInt(range) >= 12) {
       setBackground("good");
@@ -69,7 +68,6 @@ export function App() {
         Length ({range})
       </label>
       <div className={buttonBackground}>
-        <p className={labelTag}>Buttons here</p>
         <div>
           <input
             type="checkbox"

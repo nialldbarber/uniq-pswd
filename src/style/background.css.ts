@@ -20,7 +20,3 @@ export const buttonBackground = style({
   display: "flex",
   ...formattedFont,
 });
-
-export const labelTag = style({
-  ...formattedFont,
-});
