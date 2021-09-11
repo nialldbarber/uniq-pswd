@@ -18,5 +18,6 @@ export const mainBackground = style({
 
 export const buttonBackground = style({
   display: 'flex',
+  padding: '2rem 0',
   ...formattedFont,
 });

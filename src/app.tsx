@@ -7,10 +7,9 @@ import {
   buttonBackground,
 } from './style/background.css';
 import {input} from './style/input.css';
-import {heading, subheader, label} from './style/typography.css';
+import {heading, subheader, label, buttonText} from './style/typography.css';
 
 export function App() {
-  const [passwordMessage, setPasswordMessage] = useState<string>('');
   const {
     password,
     range,
@@ -56,9 +55,7 @@ export function App() {
 
   return (
     <div className={`${backgroundVariant[background]} ${mainBackground}`}>
-      <p className={heading}>
-        {passwordMessage === '' ? password : passwordMessage}
-      </p>
+      <p className={heading}>{password}</p>
       <p className={subheader}>{PASSWORD_STRENGTH[background]} password</p>
       <input
         className={input}
@@ -75,7 +72,7 @@ export function App() {
         Length ({range})
       </label>
       <div className={buttonBackground}>
-        <div>
+        <div className={buttonText}>
           <input
             type="checkbox"
             id="letters"
@@ -84,7 +81,7 @@ export function App() {
           />
           <label htmlFor="letters">Letters (e.g. Aa)</label>
         </div>
-        <div>
+        <div className={buttonText}>
           <input
             type="checkbox"
             id="numbers"
@@ -93,7 +90,7 @@ export function App() {
           />
           <label htmlFor="numbers">Digits (e.g. 345)⁭</label>
         </div>
-        <div>
+        <div className={buttonText}>
           <input
             type="checkbox"
             id="symbols"

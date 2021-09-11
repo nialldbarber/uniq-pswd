@@ -4,6 +4,10 @@ globalStyle('*', {
   boxSizing: 'border-box',
 });
 
+globalStyle('input, label', {
+  cursor: 'pointer',
+});
+
 globalStyle('html, body', {
   position: 'fixed',
   overflow: 'hidden',

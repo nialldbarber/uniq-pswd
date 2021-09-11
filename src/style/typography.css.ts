@@ -22,3 +22,10 @@ export const label = style({
   ...formattedFont,
   fontSize: '0.9rem',
 });
+
+export const buttonText = style({
+  ...formattedFont,
+  fontSize: '1.2rem',
+  marginRight: '0.5rem',
+  cursor: 'pointer',
+});
