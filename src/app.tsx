@@ -59,10 +59,15 @@ export function App() {
       <p className={subheader}>{PASSWORD_STRENGTH[background]} password</p>
       <input
         className={input}
+        style={{
+          background: `linear-gradient(to right, rgb(255, 255, 255) ${
+            (range as any) * 2.5
+          }%, rgba(255, 255, 255, 0.4) 0%)`,
+        }}
         type="range"
         id="range"
         name="password"
-        min="4"
+        min="0"
         max="40"
         step="1"
         value={range}
