@@ -8,11 +8,18 @@ export const backgroundVariant = styleVariants({
   bad: {background: vars.colors.bad},
 });
 
+export const wrapper = style({
+  display: 'grid',
+  height: '100vh',
+});
+
 export const mainBackground = style({
+  position: 'relative',
   display: 'flex',
+  alignSelf: 'center',
   flexDirection: 'column',
   justifyContent: 'center',
-  height: '100vh',
+  height: 300,
   padding: '2.5rem 5rem',
 });
 

@@ -4,7 +4,7 @@ globalStyle('*', {
   boxSizing: 'border-box',
 });
 
-globalStyle('input, label', {
+globalStyle('input, label, button', {
   cursor: 'pointer',
 });
 
@@ -26,5 +26,6 @@ export const vars = createGlobalTheme(':root', {
     medium: '#BE4E3A',
     bad: '#d1364e',
     white: '#FFFFFF',
+    green: '#09363f',
   },
 });
