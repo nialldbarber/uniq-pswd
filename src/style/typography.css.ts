@@ -8,7 +8,9 @@ export const formattedFont = {
 
 export const heading = style({
   ...formattedFont,
-  fontSize: '2rem',
+  fontSize: '3rem',
+  fontWeight: 500,
+  lineHeight: 1.3,
 });
 
 export const subheader = style({
