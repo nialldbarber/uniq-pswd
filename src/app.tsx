@@ -1,12 +1,28 @@
 import { useEffect } from "preact/hooks";
 import useStore from "./state";
 import { generatePassword } from "./passwordGenerator";
-import { backgroundVariant, mainBackground } from "./style/background.css";
+import {
+  backgroundVariant,
+  mainBackground,
+  buttonBackground,
+  labelTag,
+} from "./style/background.css";
 import { input } from "./style/input.css";
 import { heading, subheader, label } from "./style/typography.css";
 
 export function App() {
-  const { range, background, setRange, setBackground } = useStore();
+  const {
+    range,
+    background,
+    showLetters,
+    showNumbers,
+    showSymbols,
+    setRange,
+    setBackground,
+    setShowLetters,
+    setShowNumbers,
+    setShowSymbols,
+  } = useStore();
 
   useEffect(() => {
     if (parseInt(range) > 10) {
@@ -21,6 +37,12 @@ export function App() {
   }, [range]);
 
   console.log(generatePassword(range));
+
+  console.log({
+    showLetters,
+    showNumbers,
+    showSymbols,
+  });
 
   const PASSWORD_STRENGTH = {
     good: "Strong",
@@ -46,6 +68,36 @@ export function App() {
       <label className={label} htmlFor="range">
         Length ({range})
       </label>
+      <div className={buttonBackground}>
+        <p className={labelTag}>Buttons here</p>
+        <div>
+          <input
+            type="checkbox"
+            id="letters"
+            checked={showLetters}
+            onInput={() => setShowLetters(!showLetters)}
+          />
+          <label htmlFor="letters">Letters (e.g. Aa)</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="numbers"
+            checked={showNumbers}
+            onInput={() => setShowNumbers(!showNumbers)}
+          />
+          <label htmlFor="numbers">Digits (e.g. 345)⁭</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="symbols"
+            checked={showSymbols}
+            onInput={() => setShowSymbols(!showSymbols)}
+          />
+          <label htmlFor="symbols">Symbols (@&$!#?)</label>
+        </div>
+      </div>
     </div>
   );
 }
