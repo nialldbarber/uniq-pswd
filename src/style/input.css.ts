@@ -8,4 +8,5 @@ export const input = style({
   height: 8,
   background:
     'linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.4) 0%)',
+  cursor: 'pointer',
 });

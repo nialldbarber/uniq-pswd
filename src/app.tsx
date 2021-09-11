@@ -1,4 +1,4 @@
-import {useEffect} from 'preact/hooks';
+import {useState, useEffect} from 'preact/hooks';
 import useStore from './state';
 import {generatePassword} from './passwordGenerator';
 import {
@@ -10,6 +10,7 @@ import {input} from './style/input.css';
 import {heading, subheader, label} from './style/typography.css';
 
 export function App() {
+  const [passwordMessage, setPasswordMessage] = useState<string>('');
   const {
     password,
     range,
@@ -38,9 +39,13 @@ export function App() {
   }, [range]);
 
   useEffect(() => {
-    setPassword(
-      generatePassword(parseInt(range), showLetters, showNumbers, showSymbols)
-    );
+    if (!showLetters && !showNumbers && !showSymbols) {
+      setPassword('No password is a bad password 😡');
+    } else {
+      setPassword(
+        generatePassword(parseInt(range), showLetters, showNumbers, showSymbols)
+      );
+    }
   }, [range, showLetters, showNumbers, showSymbols]);
 
   const PASSWORD_STRENGTH = {
@@ -51,7 +56,9 @@ export function App() {
 
   return (
     <div className={`${backgroundVariant[background]} ${mainBackground}`}>
-      <p className={heading}>{password}</p>
+      <p className={heading}>
+        {passwordMessage === '' ? password : passwordMessage}
+      </p>
       <p className={subheader}>{PASSWORD_STRENGTH[background]} password</p>
       <input
         className={input}
