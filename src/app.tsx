@@ -63,7 +63,7 @@ export function App() {
       if (isCopied) {
         setIsCopied(false);
       }
-    }, 3000);
+    }, 2500);
     return () => clearTimeout(timer);
   }, [isCopied]);
 

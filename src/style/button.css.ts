@@ -9,6 +9,12 @@ export const button = style({
   background: vars.colors.green,
   color: vars.colors.white,
   border: `2px solid ${vars.colors.white}`,
-  padding: '1.125rem 1.375rem',
+  padding: '1.125rem 1rem',
   fontSize: '1.125rem',
+  transition: 'background .125s ease 0s, color .125s ease 0s',
+
+  ':hover': {
+    background: vars.colors.white,
+    color: vars.colors.green,
+  },
 });
