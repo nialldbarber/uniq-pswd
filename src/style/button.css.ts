@@ -5,6 +5,7 @@ export const button = style({
   position: 'absolute',
   top: '2.5rem',
   right: '5rem',
+  width: 180,
   background: vars.colors.green,
   color: vars.colors.white,
   border: `2px solid ${vars.colors.white}`,

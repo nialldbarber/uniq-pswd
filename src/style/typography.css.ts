@@ -26,6 +26,11 @@ export const label = style({
   marginTop: '0.5rem',
 });
 
+export const labelText = style({
+  display: 'inline-block',
+  marginLeft: '0.5rem',
+});
+
 export const buttonText = style({
   ...formattedFont,
   fontSize: '1.2rem',

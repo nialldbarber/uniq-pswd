@@ -1,4 +1,4 @@
-import {useEffect} from 'preact/hooks';
+import {useState, useEffect} from 'preact/hooks';
 import useStore from './state';
 import {generatePassword} from './utils/passwordGenerator';
 import {copyToClipboard} from './utils/copy-to-clipboard';
@@ -10,9 +10,17 @@ import {
 } from './style/background.css';
 import {input} from './style/input.css';
 import {button} from './style/button.css';
-import {heading, subheader, label, buttonText} from './style/typography.css';
+import {popup} from './style/popup.css';
+import {
+  heading,
+  subheader,
+  label,
+  labelText,
+  buttonText,
+} from './style/typography.css';
 
 export function App() {
+  const [isCopied, setIsCopied] = useState(false);
   const {
     password,
     range,
@@ -49,6 +57,15 @@ export function App() {
       );
     }
   }, [range, showLetters, showNumbers, showSymbols]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (isCopied) {
+        setIsCopied(false);
+      }
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [isCopied]);
 
   const PASSWORD_STRENGTH = {
     good: 'Strong',
@@ -88,7 +105,9 @@ export function App() {
               checked={showLetters}
               onInput={() => setShowLetters(!showLetters)}
             />
-            <label htmlFor="letters">Letters (e.g. Aa)</label>
+            <label className={labelText} htmlFor="letters">
+              Letters (e.g. Aa)
+            </label>
           </div>
           <div className={buttonText}>
             <input
@@ -97,7 +116,9 @@ export function App() {
               checked={showNumbers}
               onInput={() => setShowNumbers(!showNumbers)}
             />
-            <label htmlFor="numbers">Digits (e.g. 345)⁭</label>
+            <label className={labelText} htmlFor="numbers">
+              Digits (e.g. 345)⁭
+            </label>
           </div>
           <div className={buttonText}>
             <input
@@ -106,15 +127,21 @@ export function App() {
               checked={showSymbols}
               onInput={() => setShowSymbols(!showSymbols)}
             />
-            <label htmlFor="symbols">Symbols (@&$!#?)</label>
+            <label className={labelText} htmlFor="symbols">
+              Symbols (@&$!#?)
+            </label>
           </div>
         </div>
         <button
           className={button}
-          onClick={() => copyToClipboard(password || '')}
+          onClick={() => {
+            copyToClipboard(password || '');
+            setIsCopied(true);
+          }}
         >
           Copy password
         </button>
+        {isCopied ? <div className={popup}>Copied</div> : null}
       </div>
     </div>
   );
