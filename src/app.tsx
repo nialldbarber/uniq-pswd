@@ -11,11 +11,13 @@ import {heading, subheader, label} from './style/typography.css';
 
 export function App() {
   const {
+    password,
     range,
     background,
     showLetters,
     showNumbers,
     showSymbols,
+    setPassword,
     setRange,
     setBackground,
     setShowLetters,
@@ -35,13 +37,11 @@ export function App() {
     }
   }, [range]);
 
-  console.log(generatePassword(range));
-
-  console.log({
-    showLetters,
-    showNumbers,
-    showSymbols,
-  });
+  useEffect(() => {
+    setPassword(
+      generatePassword(parseInt(range), showLetters, showNumbers, showSymbols)
+    );
+  }, [range, showLetters, showNumbers, showSymbols]);
 
   const PASSWORD_STRENGTH = {
     good: 'Strong',
@@ -51,7 +51,7 @@ export function App() {
 
   return (
     <div className={`${backgroundVariant[background]} ${mainBackground}`}>
-      <p className={heading}>Password</p>
+      <p className={heading}>{password}</p>
       <p className={subheader}>{PASSWORD_STRENGTH[background]} password</p>
       <input
         className={input}
