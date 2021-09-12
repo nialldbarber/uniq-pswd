@@ -12,6 +12,19 @@ export const heading = style({
   fontWeight: 500,
   lineHeight: 1.3,
   marginBottom: '0.5rem',
+  wordBreak: 'break-word',
+
+  '@media': {
+    'screen and (max-width: 768px)': {
+      position: 'fixed',
+      top: '9rem',
+      left: '50%',
+      width: '100%',
+      fontSize: '1.8rem',
+      transform: 'translateX(-50%)',
+      padding: '0 1rem',
+    },
+  },
 });
 
 export const subheader = style({
