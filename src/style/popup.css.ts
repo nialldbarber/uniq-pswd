@@ -22,4 +22,15 @@ export const popup = style({
     borderTop: `5px solid ${vars.colors.green}`,
     transform: 'translateX(-50%)',
   },
+
+  '@media': {
+    'screen and (max-width: 768px)': {
+      position: 'fixed',
+      bottom: '5.5rem',
+      top: 'auto',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: 66,
+    },
+  },
 });

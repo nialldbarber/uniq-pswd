@@ -21,10 +21,22 @@ export const mainBackground = style({
   justifyContent: 'center',
   height: 300,
   padding: '2.5rem 5rem',
+
+  '@media': {
+    'screen and (max-width: 768px)': {
+      padding: '0 1rem',
+    },
+  },
 });
 
 export const buttonBackground = style({
   display: 'flex',
   padding: '2rem 0',
   ...formattedFont,
+
+  '@media': {
+    'screen and (max-width: 768px)': {
+      flexDirection: 'column',
+    },
+  },
 });

@@ -16,6 +16,18 @@ export const button = style({
     'background .125s ease 0s, color .125s ease 0s, 0.2s cubic-bezier(0, 0, 0.38, 0.9)',
   userSelect: 'none',
 
+  '@media': {
+    'screen and (max-width: 768px)': {
+      position: 'fixed',
+      fontSize: '0.9rem',
+      width: 150,
+      top: 'calc(100% - 5rem)',
+      left: '50%',
+      right: 'auto',
+      transform: 'translateX(-50%)',
+    },
+  },
+
   ':hover': {
     background: vars.colors.white,
     color: vars.colors.green,
@@ -36,5 +48,12 @@ export const refresh = style({
 
   ':hover': {
     opacity: 0.8,
+  },
+
+  '@media': {
+    'screen and (max-width: 768px)': {
+      right: '1rem',
+      bottom: '1.4rem',
+    },
   },
 });

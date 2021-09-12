@@ -45,4 +45,11 @@ export const buttonText = style({
   fontSize: '1.2rem',
   marginRight: '0.7rem',
   cursor: 'pointer',
+
+  '@media': {
+    'screen and (max-width: 768px)': {
+      marginBottom: '1rem',
+      fontSize: '1rem',
+    },
+  },
 });
