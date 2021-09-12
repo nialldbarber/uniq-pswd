@@ -16,8 +16,16 @@ export const heading = style({
 
 export const subheader = style({
   ...formattedFont,
+  display: 'flex',
+  alignItems: 'center',
   fontSize: '1rem',
   marginBottom: '0.8rem',
+});
+
+export const labelStrength = style({
+  ...formattedFont,
+  fontSize: '1.2rem',
+  marginLeft: '0.5rem',
 });
 
 export const label = style({
