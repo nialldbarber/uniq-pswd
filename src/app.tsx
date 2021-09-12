@@ -94,11 +94,18 @@ export function App() {
     bad: <MdWarning size={35} />,
   };
 
+  const PASSWORD_DETAILS = {
+    good: "This is a strong password, you'll be well protected using this",
+    medium:
+      "This is a fairly strong password, you'll be relatively well protected using this",
+    bad: "This is a weak password, you'll be vulnerable to attacks",
+  };
+
   return (
     <div className={`${backgroundVariant[background]} ${wrapper}`}>
       <div className={mainBackground}>
         <p className={heading}>{password}</p>
-        <p className={subheader}>
+        <p className={subheader} title={PASSWORD_DETAILS[background]}>
           {PASSWORD_STRENGTH_LOGO[background]}{' '}
           <span className={labelStrength}>
             {PASSWORD_STRENGTH[background]} password
@@ -178,8 +185,3 @@ export function App() {
     </div>
   );
 }
-
-// custom checkboxes
-// active checkboxes
-// active slider
-// down arrow to copy message
