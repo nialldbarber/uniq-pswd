@@ -1,4 +1,12 @@
 import {useState, useEffect} from 'preact/hooks';
+import {
+  MdVerifiedUser,
+  MdErrorOutline,
+  MdWarning,
+  MdBatteryChargingFull,
+  MdBatteryCharging60,
+  MdBatteryCharging20,
+} from 'react-icons/md';
 import useStore from './state';
 import {generatePassword} from './utils/passwordGenerator';
 import {copyToClipboard} from './utils/copy-to-clipboard';
@@ -18,6 +26,10 @@ import {
   labelText,
   buttonText,
 } from './style/typography.css';
+
+// MdVerifiedUser MdErrorOutline MdWarning
+// MdBatteryChargingFull MdBatteryCharging60 MdBatteryCharging20
+// MdContentCopy
 
 export function App() {
   const [isCopied, setIsCopied] = useState(false);
@@ -76,11 +88,20 @@ export function App() {
     bad: 'Weak',
   };
 
+  const PASSWORD_STRENGTH_LOGO = {
+    good: <MdVerifiedUser size={40} />,
+    medium: <MdErrorOutline size={40} />,
+    bad: <MdWarning size={40} />,
+  };
+
   return (
     <div className={`${backgroundVariant[background]} ${wrapper}`}>
       <div className={mainBackground}>
         <p className={heading}>{password}</p>
-        <p className={subheader}>{PASSWORD_STRENGTH[background]} password</p>
+        <p className={subheader}>
+          {PASSWORD_STRENGTH_LOGO[background]} {PASSWORD_STRENGTH[background]}{' '}
+          password
+        </p>
         <input
           className={input}
           style={{

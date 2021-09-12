@@ -10,6 +10,7 @@
     "@vanilla-extract/css": "^1.5.0",
     "@vanilla-extract/vite-plugin": "^2.0.2",
     "preact": "^10.5.13",
+    "react-icons": "^4.2.0",
     "zustand": "^3.5.10"
   },
   "devDependencies": {
