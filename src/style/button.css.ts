@@ -11,12 +11,18 @@ export const button = style({
   border: `2px solid ${vars.colors.white}`,
   padding: '1.125rem 1rem',
   fontSize: '1.125rem',
-  transition: 'background .125s ease 0s, color .125s ease 0s',
+  borderRadius: 5,
+  transition:
+    'background .125s ease 0s, color .125s ease 0s, 0.2s cubic-bezier(0, 0, 0.38, 0.9)',
   userSelect: 'none',
 
   ':hover': {
     background: vars.colors.white,
     color: vars.colors.green,
+  },
+
+  ':focus': {
+    boxShadow: 'rgba(66, 153, 225, 0.6) 0px 0px 0px 3px',
   },
 });
 

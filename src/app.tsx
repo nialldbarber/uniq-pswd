@@ -178,3 +178,7 @@ export function App() {
     </div>
   );
 }
+
+// custom checkboxes
+// active checkboxes
+// active slider
