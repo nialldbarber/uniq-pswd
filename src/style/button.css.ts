@@ -12,9 +12,23 @@ export const button = style({
   padding: '1.125rem 1rem',
   fontSize: '1.125rem',
   transition: 'background .125s ease 0s, color .125s ease 0s',
+  userSelect: 'none',
 
   ':hover': {
     background: vars.colors.white,
     color: vars.colors.green,
+  },
+});
+
+export const refresh = style({
+  position: 'absolute',
+  bottom: '3rem',
+  right: '5rem',
+  cursor: 'pointer',
+  opacity: 1,
+  transition: '.1s all ease',
+
+  ':hover': {
+    opacity: 0.8,
   },
 });

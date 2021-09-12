@@ -1,8 +1,14 @@
 import {useState, useEffect} from 'preact/hooks';
-import {MdVerifiedUser, MdErrorOutline, MdWarning} from 'react-icons/md';
+import {
+  MdVerifiedUser,
+  MdErrorOutline,
+  MdWarning,
+  MdAutorenew,
+} from 'react-icons/md';
 import useStore from './state';
 import {generatePassword} from './utils/passwordGenerator';
 import {copyToClipboard} from './utils/copy-to-clipboard';
+import {vars} from './style/global.css';
 import {
   backgroundVariant,
   wrapper,
@@ -10,7 +16,7 @@ import {
   buttonBackground,
 } from './style/background.css';
 import {input} from './style/input.css';
-import {button} from './style/button.css';
+import {button, refresh} from './style/button.css';
 import {popup} from './style/popup.css';
 import {
   heading,
@@ -50,6 +56,12 @@ export function App() {
     }
   }, [range]);
 
+  function handleSetPassword() {
+    setPassword(
+      generatePassword(parseInt(range), showLetters, showNumbers, showSymbols)
+    );
+  }
+
   useEffect(() => {
     if (
       (!showLetters && !showNumbers && !showSymbols) ||
@@ -57,9 +69,7 @@ export function App() {
     ) {
       setPassword('No password is a bad password 😡');
     } else {
-      setPassword(
-        generatePassword(parseInt(range), showLetters, showNumbers, showSymbols)
-      );
+      handleSetPassword();
     }
   }, [range, showLetters, showNumbers, showSymbols]);
 
@@ -79,9 +89,9 @@ export function App() {
   };
 
   const PASSWORD_STRENGTH_LOGO = {
-    good: <MdVerifiedUser size={40} />,
-    medium: <MdErrorOutline size={40} />,
-    bad: <MdWarning size={40} />,
+    good: <MdVerifiedUser size={35} />,
+    medium: <MdErrorOutline size={35} />,
+    bad: <MdWarning size={35} />,
   };
 
   return (
@@ -121,7 +131,7 @@ export function App() {
               checked={showLetters}
               onInput={() => setShowLetters(!showLetters)}
             />
-            <label className={labelText} htmlFor="letters">
+            <label className={labelText} htmlFor="letters" title="Add letters">
               Letters (e.g. Aa)
             </label>
           </div>
@@ -132,7 +142,7 @@ export function App() {
               checked={showNumbers}
               onInput={() => setShowNumbers(!showNumbers)}
             />
-            <label className={labelText} htmlFor="numbers">
+            <label className={labelText} htmlFor="numbers" title="Add numbers">
               Digits (e.g. 345)⁭
             </label>
           </div>
@@ -143,21 +153,27 @@ export function App() {
               checked={showSymbols}
               onInput={() => setShowSymbols(!showSymbols)}
             />
-            <label className={labelText} htmlFor="symbols">
+            <label className={labelText} htmlFor="symbols" title="Add symbols">
               Symbols (@&$!#?)
             </label>
           </div>
         </div>
-        <button
-          className={button}
-          onClick={() => {
-            copyToClipboard(password || '');
-            setIsCopied(true);
-          }}
-        >
-          Copy password
-        </button>
-        {isCopied ? <div className={popup}>Copied</div> : null}
+        <div>
+          <button
+            className={button}
+            onClick={() => {
+              copyToClipboard(password || '');
+              setIsCopied(true);
+            }}
+            title="Copy password"
+          >
+            Copy password
+          </button>
+          {isCopied ? <div className={popup}>Copied</div> : null}
+        </div>
+        <div className={refresh} onClick={handleSetPassword} title="Refresh">
+          <MdAutorenew size={40} fill={vars.colors.white} />
+        </div>
       </div>
     </div>
   );

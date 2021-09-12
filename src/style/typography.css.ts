@@ -37,6 +37,7 @@ export const label = style({
 export const labelText = style({
   display: 'inline-block',
   marginLeft: '0.5rem',
+  userSelect: 'none',
 });
 
 export const buttonText = style({
