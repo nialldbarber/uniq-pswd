@@ -1,4 +1,4 @@
-export function copyToClipboard(text: string) {
+export function copyToClipboard(text: string): void {
   const copiedText = document.createElement('textarea');
   copiedText.innerText = text;
   document.body.appendChild(copiedText);
