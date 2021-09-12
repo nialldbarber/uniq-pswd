@@ -33,9 +33,9 @@ const useStore = create<State>((set) => ({
   setPassword: (password) => set(() => ({password})),
   setRange: (range) => set(() => ({range})),
   setBackground: (background) => set(() => ({background})),
-  setShowLetters: (letter) => set(() => ({showLetters: letter})),
-  setShowNumbers: (number) => set(() => ({showNumbers: number})),
-  setShowSymbols: (symbol) => set(() => ({showSymbols: symbol})),
+  setShowLetters: (showLetters) => set(() => ({showLetters})),
+  setShowNumbers: (showNumbers) => set(() => ({showNumbers})),
+  setShowSymbols: (showSymbols) => set(() => ({showSymbols})),
 }));
 
 export default useStore;
