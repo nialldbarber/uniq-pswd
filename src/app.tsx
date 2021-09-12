@@ -118,7 +118,7 @@ export function App() {
           max="40"
           step="1"
           value={range}
-          onInput={(e: any) => setRange(e.target.value)}
+          onInput={(e: any) => setRange(e.target.value)} // <- TODO: what event is this?!
         />
         <label className={label} htmlFor="range">
           Length ({range})
@@ -182,3 +182,4 @@ export function App() {
 // custom checkboxes
 // active checkboxes
 // active slider
+// down arrow to copy message

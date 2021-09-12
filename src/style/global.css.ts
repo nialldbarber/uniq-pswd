@@ -26,6 +26,8 @@ export const vars = createGlobalTheme(':root', {
     medium: '#BE4E3A',
     bad: '#d1364e',
     white: '#FFFFFF',
+    black: '#111',
     green: '#09363f',
+    focusHovered: 'rgba(66, 153, 225, 0.6)',
   },
 });

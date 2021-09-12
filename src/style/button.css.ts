@@ -22,7 +22,7 @@ export const button = style({
   },
 
   ':focus': {
-    boxShadow: 'rgba(66, 153, 225, 0.6) 0px 0px 0px 3px',
+    boxShadow: `${vars.colors.focusHovered} 0px 0px 0px 3px`,
   },
 });
 

@@ -1,4 +1,5 @@
 import {style} from '@vanilla-extract/css';
+import {vars} from './global.css';
 
 export const input = style({
   alignSelf: 'center',
@@ -16,7 +17,7 @@ export const input = style({
       height: 35,
       width: 35,
       borderRadius: '50%',
-      background: '#ffffff',
+      background: vars.colors.white,
       cursor: 'pointer',
     },
   },

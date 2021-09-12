@@ -12,15 +12,14 @@ export const popup = style({
   borderRadius: 5,
 
   ':after': {
-    content: '',
+    content: "''",
     position: 'absolute',
     display: 'block',
-    left: 18,
-    top: 50,
-    width: 10,
-    height: 10,
-    borderLeft: '20px solid transparent',
-    borderRight: '20px solid transparent',
-    borderTop: '20px solid #000',
+    left: '50%',
+    top: 30,
+    borderLeft: '5px solid transparent',
+    borderRight: '5px solid transparent',
+    borderTop: `5px solid ${vars.colors.green}`,
+    transform: 'translateX(-50%)',
   },
 });
