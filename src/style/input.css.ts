@@ -14,6 +14,7 @@ export const input = style({
 
   selectors: {
     '&[type=range]::-webkit-slider-thumb': {
+      WebkitAppearance: 'none',
       appearance: 'none',
       height: 35,
       width: 35,
