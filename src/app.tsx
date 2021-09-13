@@ -50,7 +50,7 @@ export function App() {
     );
   }
 
-  useEffect(() => {
+  function handleBackgroundChange() {
     if (parseInt(range) <= 6) {
       setBackground('bad');
     }
@@ -60,7 +60,7 @@ export function App() {
     if (parseInt(range) >= 12) {
       setBackground('good');
     }
-  }, [range]);
+  }
 
   useEffect(() => {
     if (
@@ -71,6 +71,7 @@ export function App() {
       setBackground('bad');
     } else {
       handleSetPassword();
+      handleBackgroundChange();
     }
   }, [range, showLetters, showNumbers, showSymbols]);
 
