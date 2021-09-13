@@ -68,6 +68,7 @@ export function App() {
       parseInt(range) <= 1
     ) {
       setPassword('No password is a bad password 😡');
+      setBackground('bad');
     } else {
       handleSetPassword();
     }
