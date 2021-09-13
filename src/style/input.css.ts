@@ -20,7 +20,12 @@ export const input = style({
       width: 35,
       borderRadius: '50%',
       background: vars.colors.white,
+      border: 'none',
       cursor: 'pointer',
+    },
+
+    '&[type=range i]::-webkit-slider-thumb': {
+      color: vars.colors.white,
     },
   },
 });
