@@ -13,7 +13,7 @@ export const button = style({
   fontSize: '1.125rem',
   borderRadius: 5,
   transition:
-    'background .125s ease 0s, color .125s ease 0s, 0.2s cubic-bezier(0, 0, 0.38, 0.9)',
+    'background .125s ease 0s, color .125s ease 0s, box-shadow 0.2s cubic-bezier(0, 0, 0.38, 0.9)',
   userSelect: 'none',
 
   '@media': {
@@ -44,7 +44,7 @@ export const refresh = style({
   right: '5rem',
   cursor: 'pointer',
   opacity: 1,
-  transition: '.1s all ease',
+  transition: '.1s opacity ease',
 
   ':hover': {
     opacity: 0.8,
