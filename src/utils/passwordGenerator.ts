@@ -87,7 +87,7 @@ export function generatePassword(
     symbol
   );
   let arr: Array<string | number> = [];
-  let specialChars = '!@£$%&^*()_-+={}[]|;:?/>.<,~§±';
+  let specialChars = '!@£$%&^*()_-+={}[]|;:?/>.<,~';
 
   let lowerCase = generate(letters / 2, () => generateLetter('A'));
   let upperCase = generate(letters / 2, () => generateLetter('a'));
