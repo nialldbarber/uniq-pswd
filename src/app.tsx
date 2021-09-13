@@ -44,6 +44,12 @@ export function App() {
     setShowSymbols,
   } = useStore();
 
+  function handleSetPassword() {
+    setPassword(
+      generatePassword(parseInt(range), showLetters, showNumbers, showSymbols)
+    );
+  }
+
   useEffect(() => {
     if (parseInt(range) <= 6) {
       setBackground('bad');
@@ -55,12 +61,6 @@ export function App() {
       setBackground('good');
     }
   }, [range]);
-
-  function handleSetPassword() {
-    setPassword(
-      generatePassword(parseInt(range), showLetters, showNumbers, showSymbols)
-    );
-  }
 
   useEffect(() => {
     if (
@@ -125,7 +125,7 @@ export function App() {
           max="40"
           step="1"
           value={range}
-          onInput={(e: any) => setRange(e.target.value)} // <- TODO: what event is this?!
+          onInput={(e: any) => setRange(e.target!.value)}
         />
         <label className={label} htmlFor="range">
           Length ({range})
