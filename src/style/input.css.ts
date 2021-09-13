@@ -4,6 +4,7 @@ import {vars} from './global.css';
 export const input = style({
   alignSelf: 'center',
   appearance: 'none',
+  WebkitAppearance: 'none',
   width: '100%',
   borderRadius: 8,
   height: 8,
