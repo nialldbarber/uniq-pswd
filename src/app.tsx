@@ -28,7 +28,7 @@ import {
 } from './style/typography.css';
 
 export function App() {
-  const [isCopied, setIsCopied] = useState(false);
+  const [isCopied, setIsCopied] = useState<boolean>(false);
   const {
     password,
     range,
