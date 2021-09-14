@@ -30,6 +30,7 @@ import {
 
 export function App() {
   const [isCopied, setIsCopied] = useState<boolean>(false);
+  const [pwLength, setPwLength] = useState<boolean>(true);
   const {
     password,
     range,
@@ -69,13 +70,15 @@ export function App() {
   useEffect(() => {
     if (
       (!showLetters && !showNumbers && !showSymbols) ||
-      parseInt(range) <= 1
+      parseInt(range) <= 3
     ) {
       setPassword('No password is a bad password 😡');
       setBackground('bad');
+      setPwLength(false);
     } else {
       handleSetPassword();
       handleBackgroundChange();
+      setPwLength(true);
     }
   }, [range, showLetters, showNumbers, showSymbols]);
 
@@ -136,7 +139,11 @@ export function App() {
           value={range}
           onInput={(e: any) => setRange(e.target!.value)}
         />
-        <label className={label} htmlFor="range">
+        <label
+          className={label}
+          style={{opacity: pwLength ? 1 : 0}}
+          htmlFor="range"
+        >
           Length ({range})
         </label>
         <div className={buttonBackground}>
