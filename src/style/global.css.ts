@@ -22,6 +22,7 @@ globalStyle('html, body', {
 
 export const vars = createGlobalTheme(':root', {
   colors: {
+    mega: '#15ab71',
     good: '#1C815A',
     medium: '#BE4E3A',
     bad: '#d1364e',

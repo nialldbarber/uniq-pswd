@@ -3,6 +3,7 @@ import {vars} from './global.css';
 import {formattedFont} from './typography.css';
 
 export const backgroundVariant = styleVariants({
+  mega: {background: vars.colors.mega},
   good: {background: vars.colors.good},
   medium: {background: vars.colors.medium},
   bad: {background: vars.colors.bad},

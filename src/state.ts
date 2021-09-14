@@ -1,6 +1,7 @@
 import create from 'zustand';
 
 export const BACKGROUND = {
+  mega: 'mega',
   good: 'good',
   medium: 'medium',
   bad: 'bad',

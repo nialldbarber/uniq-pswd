@@ -3,6 +3,7 @@ import {
   MdVerifiedUser,
   MdErrorOutline,
   MdWarning,
+  MdBatteryChargingFull,
   MdAutorenew,
 } from 'react-icons/md';
 import useStore from './state';
@@ -60,6 +61,9 @@ export function App() {
     if (parseInt(range) >= 12) {
       setBackground('good');
     }
+    if (parseInt(range) >= 25) {
+      setBackground('mega');
+    }
   }
 
   useEffect(() => {
@@ -85,18 +89,21 @@ export function App() {
   }, [isCopied]);
 
   const PASSWORD_STRENGTH = {
+    mega: 'Mega',
     good: 'Strong',
     medium: 'Fairly strong',
     bad: 'Weak',
   };
 
   const PASSWORD_STRENGTH_LOGO = {
+    mega: <MdBatteryChargingFull size={35} />,
     good: <MdVerifiedUser size={35} />,
     medium: <MdErrorOutline size={35} />,
     bad: <MdWarning size={35} />,
   };
 
   const PASSWORD_DETAILS = {
+    mega: 'This is a MEGA password, give up hackers',
     good: "This is a strong password, you'll be well protected using this",
     medium:
       "This is a fairly strong password, you'll be relatively well protected using this",
