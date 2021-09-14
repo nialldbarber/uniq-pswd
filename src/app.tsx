@@ -171,7 +171,7 @@ export function App() {
           <button
             className={button}
             onClick={() => {
-              copyToClipboard(password || '');
+              copyToClipboard(password);
               setIsCopied(true);
             }}
             title="Copy password"
